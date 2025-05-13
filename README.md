@@ -18,6 +18,107 @@
   ```
   ![image](https://github.com/user-attachments/assets/cbc1d548-3cd9-424d-8526-9f49c1f845b0)
 
+  Edit FIle ```main.ts``` menjadi:
+  ```
+  import { Application, Context, Router } from "@oak/oak";
+  import ChatServer from "./ChatServer.ts";
+  
+  const app = new Application();
+  const port = 8080;
+  const router = new Router();
+  const server = new ChatServer();
+  
+  router.get("/start_web_socket", (ctx: Context) => server.handleConnection(ctx));
+  
+  app.use(router.routes());
+  app.use(router.allowedMethods());
+  app.use(async (context) => {
+    await context.send({
+      root: Deno.cwd(),
+      index: "public/index.html",
+    });
+  });
+  
+  console.log("Listening at http://localhost:" + port);
+  await app.listen({ hostname: "0.0.0.0", port });
+  ```
+
+  Lalu buat file bernama ```ChatServer.ts```, dan isi dengan:
+  ```
+  import { Context } from "@oak/oak";
+
+  type WebSocketWithUsername = WebSocket & { username: string };
+  type AppEvent = { event: string; [key: string]: any };
+  
+  export default class ChatServer {
+    private connectedClients = new Map<string, WebSocketWithUsername>();
+  
+    public async handleConnection(ctx: Context) {
+      const socket = await ctx.upgrade() as WebSocketWithUsername;
+      const username = ctx.request.url.searchParams.get("username");
+  
+      if (this.connectedClients.has(username)) {
+        socket.close(1008, `Username ${username} is already taken`);
+        return;
+      }
+  
+      socket.username = username;
+      socket.onopen = this.broadcastUsernames.bind(this);
+      socket.onclose = () => {
+        this.clientDisconnected(socket.username);
+      };
+      socket.onmessage = (m) => {
+        this.send(socket.username, m);
+      };
+      this.connectedClients.set(username, socket);
+  
+      console.log(`New client connected: ${username}`);
+    }
+  
+    private send(username: string, message: any) {
+      const data = JSON.parse(message.data);
+      if (data.event !== "send-message") {
+        return;
+      }
+  
+      this.broadcast({
+        event: "send-message",
+        username: username,
+        message: data.message,
+      });
+    }
+  
+    private clientDisconnected(username: string) {
+      this.connectedClients.delete(username);
+      this.broadcastUsernames();
+  
+      console.log(`Client ${username} disconnected`);
+    }
+  
+    private broadcastUsernames() {
+      const usernames = [...this.connectedClients.keys()];
+      this.broadcast({ event: "update-users", usernames });
+  
+      console.log("Sent username list:", JSON.stringify(usernames));
+    }
+  
+    private broadcast(message: AppEvent) {
+      const messageString = JSON.stringify(message);
+      for (const client of this.connectedClients.values()) {
+        client.send(messageString);
+      }
+    }
+  }
+  ```
+  
+  
+
+  ```
+  deno run main.ts
+  ```
+  ![image](https://github.com/user-attachments/assets/6fe272ea-0389-4e38-b8b6-7fc1b4394fc2)
+
+
 
 ## Virtual Machine Azure
   Cara deploy VM sama seperti dengan project sebelumnya yaitu [Deploy CTF menggunakan CTFd](https://github.com/KemalRajasa/Hosting-CTF-using-CTFd-and-Microsoft-Azure/blob/main/README.md)
