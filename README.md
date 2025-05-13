@@ -124,4 +124,10 @@
 ## Virtual Machine Azure
   Cara deploy VM sama seperti dengan project sebelumnya yaitu [Deploy CTF menggunakan CTFd](https://github.com/KemalRajasa/Hosting-CTF-using-CTFd-and-Microsoft-Azure/blob/main/README.md)
 
+## Deploy Chat-App menggunakan VM Azure
+
+### Instalasi Deno
+### Instalasi
+###
+
 ## Instalasi Resource di VM
