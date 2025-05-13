@@ -110,14 +110,15 @@
     }
   }
   ```
-  
-  
 
+  Jalankan dengan:
   ```
   deno run main.ts
   ```
   ![image](https://github.com/user-attachments/assets/6fe272ea-0389-4e38-b8b6-7fc1b4394fc2)
 
+  Sejauh ini seharusnya bisa terhubung dengan menggunakan localhost
+  ![image](https://github.com/user-attachments/assets/d411b03c-0d2e-428b-ad84-96c67f162c6b)
 
 
 ## Virtual Machine Azure
