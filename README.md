@@ -156,6 +156,4 @@
 ### Konfigurasi nginx.conf
 >nano /home/azureuser/chat-app/nginx/nginx.conf
 
-  []()
-
-## Instalasi Resource di VM
+  [nginx.conf](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/nginx/nginx.conf)
