@@ -120,6 +120,10 @@
   Sejauh ini seharusnya bisa terhubung dengan menggunakan localhost
   ![image](https://github.com/user-attachments/assets/d411b03c-0d2e-428b-ad84-96c67f162c6b)
 
+  ### Hasil dari step sejauh ini:
+
+  connect via localhost
+
 
 ## Virtual Machine Azure
   Cara deploy VM sama seperti dengan project sebelumnya yaitu [Deploy CTF menggunakan CTFd](https://github.com/KemalRajasa/Hosting-CTF-using-CTFd-and-Microsoft-Azure/blob/main/README.md)
@@ -127,7 +131,9 @@
 ## Deploy Chat-App menggunakan VM Azure
 
 ### Instalasi Deno
-### Instalasi
-###
+### Instalasi Docker dan Docker-compose
+### Konfigurasi Dockerfile
+### Konfigurasi docker-compose.yml
+### Konfigurasi nginx.conf
 
 ## Instalasi Resource di VM
