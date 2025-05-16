@@ -131,8 +131,20 @@
 ## Deploy Chat-App menggunakan VM Azure
 
 ### Instalasi Deno
+  ```
+  apt-get update
+  apt-get install unzip -y
+  curl -fsSL https://deno.land/install.sh | sh
+  deno init chat-app
+  cd chat-app
+  ```
 ### Instalasi Docker dan Docker-compose
+  ```
+  apt-get install docker
+  apt-get install docker-compose
+  ```
 ### Konfigurasi Dockerfile
+  
 ### Konfigurasi docker-compose.yml
 ### Konfigurasi nginx.conf
 
