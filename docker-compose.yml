@@ -1,0 +1,41 @@
+version: "3.3"
+
+services:
+  chat-app:
+    build: .
+    container_name: chat-app
+    expose:
+      - "8080"
+    restart: unless-stopped
+    command: deno task dev
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-reverse-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - chat-app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
+
+services:
+  chat-app:
+    build: .
+    container_name: chat-app
+    expose:
+      - "8080"
+    restart: unless-stopped
+    command: deno task dev
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-reverse-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - chat-app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
