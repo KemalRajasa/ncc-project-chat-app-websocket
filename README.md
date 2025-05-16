@@ -143,9 +143,13 @@
   apt-get install docker
   apt-get install docker-compose
   ```
-### Konfigurasi Dockerfile
+### Konfigurasi file Dockerfile
+>pastikan file Dockerfile ada di direktori yang sama dengan main.ts dan ChatServer.ts (direktori chat-app)
+
+  [Dockerfile](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/Dockerfile)
   
 ### Konfigurasi docker-compose.yml
+
 ### Konfigurasi nginx.conf
 
 ## Instalasi Resource di VM
