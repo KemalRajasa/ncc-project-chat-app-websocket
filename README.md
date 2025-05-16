@@ -165,17 +165,17 @@
 ### Konfigurasi file Dockerfile
 >pastikan file Dockerfile ada di direktori yang sama dengan main.ts dan ChatServer.ts (direktori chat-app)
 
-  [Dockerfile](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/Dockerfile)
+  [Dockerfile](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/chat-app/Dockerfile)
   
 ### Konfigurasi docker-compose.yml
 >nano /home/azureuser/chat-app/docker-compose.yml
 
-  [docker-compose.yml](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/docker-compose.yml)
+  [docker-compose.yml](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/chat-app/docker-compose.yml)
 
 ### Konfigurasi nginx.conf
 >nano /home/azureuser/chat-app/nginx/nginx.conf
 
-  [nginx.conf](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/nginx/nginx.conf)
+  [nginx.conf](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/chat-app/nginx/nginx.conf)
 
 ### Izinkan inbound di network security group ke port 8080
 >sejauh ini seharusnya sudah bisa connect via ip:port
