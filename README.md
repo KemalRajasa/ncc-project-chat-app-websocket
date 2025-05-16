@@ -1,5 +1,24 @@
 # ncc-project-chat-app-websocket
 
+## Overview struktur direktori dan file
+  ```
+  chat-app/
+  ├── docker-compose.yml
+  ├── Dockerfile
+  ├── nginx/
+  │   └── nginx.conf
+  ├── public/
+  │   └── index.html
+  ├── main.ts
+  ├── ChatServer.ts
+  ├── db.ts
+  ├── models/
+  │   ├── room.ts
+  │   ├── poll.ts
+  │   └── message.ts
+  ├── deno.json
+  ```
+
 ## Setup dan Instalasi Deno di Powershell Local
   Instalasi Deno
   ```
