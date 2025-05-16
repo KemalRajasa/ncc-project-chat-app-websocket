@@ -149,6 +149,9 @@
   [Dockerfile](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/Dockerfile)
   
 ### Konfigurasi docker-compose.yml
+>nano /home/azureuser/chat-app/docker-compose.yml
+
+  [docker-compose.yml](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/docker-compose.yml)
 
 ### Konfigurasi nginx.conf
 
