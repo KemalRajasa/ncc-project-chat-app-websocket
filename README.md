@@ -154,5 +154,8 @@
   [docker-compose.yml](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/docker-compose.yml)
 
 ### Konfigurasi nginx.conf
+>nano /home/azureuser/chat-app/nginx/nginx.conf
+
+  []()
 
 ## Instalasi Resource di VM
