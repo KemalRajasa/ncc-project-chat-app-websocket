@@ -181,3 +181,7 @@
 >sejauh ini seharusnya sudah bisa connect via ip:port
 ![image](https://github.com/user-attachments/assets/c08c436b-40a3-4a21-80ed-34ae7ecb5918)
 
+
+## Gunakan Database Supabase
+
+### G
