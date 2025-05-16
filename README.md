@@ -157,3 +157,8 @@
 >nano /home/azureuser/chat-app/nginx/nginx.conf
 
   [nginx.conf](https://github.com/KemalRajasa/ncc-project-chat-app-websocket/blob/main/nginx/nginx.conf)
+
+### Izinkan inbound di network security group ke port 8080
+>sejauh ini seharusnya sudah bisa connect via ip:port
+![image](https://github.com/user-attachments/assets/c08c436b-40a3-4a21-80ed-34ae7ecb5918)
+
