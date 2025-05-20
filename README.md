@@ -182,4 +182,4 @@
 
 ## Gunakan Database Supabase
 
-### G
+### Gunakan connection string
