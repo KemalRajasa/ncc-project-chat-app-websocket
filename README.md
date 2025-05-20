@@ -9,13 +9,11 @@
   │   └── nginx.conf
   ├── public/
   │   └── index.html
+  │   └── app.js
+  │   └── style.css
   ├── main.ts
   ├── ChatServer.ts
   ├── db.ts
-  ├── models/
-  │   ├── room.ts
-  │   ├── poll.ts
-  │   └── message.ts
   ├── deno.json
   ```
 
