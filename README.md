@@ -155,6 +155,12 @@
   deno init chat-app
   cd chat-app
   ```
+
+### Instalasi dependensi Oak
+  ```
+  deno add jsr:@oak/oak
+  ```
+
 ### Instalasi Docker dan Docker-compose
   ```
   apt-get install docker
